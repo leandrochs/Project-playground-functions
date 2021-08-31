@@ -31,11 +31,11 @@ function splitSentence(sentence) {
   return words;
 }
  
-console.log( splitSentence("Go trybe") );
-
 // Desafio 4
-function concatName() {
+function concatName(insertArray) {
   // seu código aqui
+  let concat = insertArray[insertArray.length-1] + ", " + insertArray[0];
+  return concat;
 }
 
 // Desafio 5
