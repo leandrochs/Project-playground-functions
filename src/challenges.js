@@ -1,10 +1,11 @@
 // Desafio 1
 function compareTrue(value1, value2) {
   // seu código aqui
+  let message = ''
   if (value1 === true && value2 === true) {
-    let message = true;
+    message = true;
   } else {
-    let message = false;
+    message = false;
   }
   return message;
 }
@@ -101,14 +102,33 @@ function fizzBuzz(numbers) {
         newArray.push('bug!');
       }
     }
-  }
+  
   return newArray;
 }
 
 // Desafio 9
 function encode() {
   // seu código aqui
+
+
+
+
+
+
+
 }
+
+
+
+
+// a -> 1
+// e -> 2
+// i -> 3
+// o -> 4
+// u -> 5
+
+
+
 function decode() {
   // seu código aqui
 }
