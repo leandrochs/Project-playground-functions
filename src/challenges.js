@@ -1,5 +1,5 @@
 // Desafio 1
-function compareTrue(value1 , value2) {
+function compareTrue(value1, value2) {
   // seu código aqui
   if (value1 === true && value2 === true) {
     return true;
@@ -9,32 +9,32 @@ function compareTrue(value1 , value2) {
 }
 
 // Desafio 2
-function calcArea(base , height) {
+function calcArea(base, height) {
   // seu código aqui
-  return (base*height)/2;
+  return (base * height) / 2;
 }
 
 // Desafio 3
 function splitSentence(sentence) {
   // seu código aqui
-  let words = []
-  let letters = ""
+  let words = [];
+  let letters = '';
   for (let index = 0; index < sentence.length; index += 1) {
-    if (sentence[index] !== " ") {
-      letters = letters + sentence[index];
+    if (sentence[index] !== ' ') {
+      letters += sentence[index];
     } else {
-      words.push (letters);
-      letters = "";     
-    }  
+      words.push(letters);
+      letters = '';     
+    }
   }
-  words.push (letters);
+  words.push(letters);
   return words;
 }
- 
+
 // Desafio 4
 function concatName(insertArray) {
   // seu código aqui
-  let concat = insertArray[insertArray.length-1] + ", " + insertArray[0];
+  let concat = insertArray[insertArray.length - 1] + ', ' + insertArray[0];
   return concat;
 }
 
