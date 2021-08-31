@@ -15,9 +15,23 @@ function calcArea(base , height) {
 }
 
 // Desafio 3
-function splitSentence() {
+function splitSentence(sentence) {
   // seu código aqui
+  let words = []
+  let letters = ""
+  for (let index = 0; index < sentence.length; index += 1) {
+    if (sentence[index] !== " ") {
+      letters = letters + sentence[index];
+    } else {
+      words.push (letters);
+      letters = "";     
+    }  
+  }
+  words.push (letters);
+  return words;
 }
+ 
+console.log( splitSentence("Go trybe") );
 
 // Desafio 4
 function concatName() {
