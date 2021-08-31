@@ -2,10 +2,11 @@
 function compareTrue(value1, value2) {
   // seu código aqui
   if (value1 === true && value2 === true) {
-    return true;
+    let message = true;
   } else {
-    return false;
+    let message = false;
   }
+  return message;
 }
 
 // Desafio 2
@@ -69,12 +70,13 @@ function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
   let distanceCat1 = ((mouse - cat1) ** 2) ** (1 / 2);
   let distanceCat2 = ((mouse - cat2) ** 2) ** (1 / 2);
+  let message = ''
   if (distanceCat1 < distanceCat2) {
-    let message = 'cat1';
+    message = 'cat1';
   } else if (distanceCat1 > distanceCat2) {
-    let message = 'cat2';
+    message = 'cat2';
   } else {
-    let message = 'os gatos trombam e o rato foge';
+    message = 'os gatos trombam e o rato foge';
   }
   return message;
 }
@@ -82,27 +84,25 @@ function catAndMouse(mouse, cat1, cat2) {
 // Desafio 8
 function fizzBuzz(numbers) {
   // seu código aqui
-  let newArray = []
+  let newArray = [];
   for (let index = 0; index < numbers.length; index += 1) {
     let number = numbers[index];
     let testFizz = number % 3 === 0;
     let testBuzz = number % 5 === 0;
-    let testFizzBuzz = number % 5 === 0 && number % 3 === 0;
     if (testFizz) {
-      if (testBuzz){
-        newArray.push("fizzBuzz")
-      } else {
-        newArray.push("fizz")
-      }
-    } else {
       if (testBuzz) {
-        newArray.push("buzz")
+        newArray.push('fizzBuzz');
       } else {
-        newArray.push("bug!")
+        newArray.push('fizz')
       }
-    } 
+    } else if (testBuzz) {
+        newArray.push('buzz');
+      } else {
+        newArray.push('bug!');
+      }
+    }
   }
-return newArray;
+  return newArray;
 }
 
 // Desafio 9
