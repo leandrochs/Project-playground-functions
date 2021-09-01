@@ -1,7 +1,7 @@
 // Desafio 1
 function compareTrue(value1, value2) {
   // seu código aqui
-  let message = ''
+  let message = '';
   if (value1 === true && value2 === true) {
     message = true;
   } else {
@@ -26,7 +26,7 @@ function splitSentence(sentence) {
       letters += sentence[index];
     } else {
       words.push(letters);
-      letters = '';     
+      letters = '';
     }
   }
   words.push(letters);
@@ -71,7 +71,7 @@ function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
   let distanceCat1 = ((mouse - cat1) ** 2) ** (1 / 2);
   let distanceCat2 = ((mouse - cat2) ** 2) ** (1 / 2);
-  let message = ''
+  let message = '';
   if (distanceCat1 < distanceCat2) {
     message = 'cat1';
   } else if (distanceCat1 > distanceCat2) {
@@ -94,7 +94,7 @@ function fizzBuzz(numbers) {
       if (testBuzz) {
         newArray.push('fizzBuzz');
       } else {
-        newArray.push('fizz')
+        newArray.push('fizz');
       }
     } else if (testBuzz) {
         newArray.push('buzz');
@@ -102,35 +102,50 @@ function fizzBuzz(numbers) {
         newArray.push('bug!');
       }
     }
-  
   return newArray;
 }
 
 // Desafio 9
-function encode() {
+function encode(phrase) {
   // seu código aqui
-
-
-
-
-
-
-
+  let newPhrase = [];
+  for (let index = 0; index < phrase.length; index += 1) {
+    let letter = phrase[index];
+    if (letter === 'a') {
+      letter = 1;
+    } else if (letter === 'e') {
+      letter = 2;
+    } else if (letter === 'i') {
+      letter = 3;
+    } else if (letter === 'o') {
+      letter = 4;
+    } else if (letter === 'u') {
+      letter = 5;
+    }
+    newPhrase += letter;
+  }
+  return newPhrase;
 }
 
-
-
-
-// a -> 1
-// e -> 2
-// i -> 3
-// o -> 4
-// u -> 5
-
-
-
-function decode() {
+function decode(phrase) {
   // seu código aqui
+  let newPhrase = [];
+  for (let index = 0; index < phrase.length; index += 1) {
+    let letter = phrase[index];
+    if (letter === '1') {
+      letter = 'a';
+    } else if (letter === '2') {
+      letter = 'e';
+    } else if (letter === '3') {
+      letter = 'i';
+    } else if (letter === '4') {
+      letter = 'o';
+    } else if (letter === '5') {
+      letter = 'u';
+    }
+    newPhrase += letter;
+  }
+  return newPhrase;
 }
 
 module.exports = {
