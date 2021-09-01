@@ -1,6 +1,5 @@
 // Desafio 1
 function compareTrue(value1, value2) {
-  // seu código aqui
   let message = '';
   if (value1 === true && value2 === true) {
     message = true;
@@ -12,13 +11,11 @@ function compareTrue(value1, value2) {
 
 // Desafio 2
 function calcArea(base, height) {
-  // seu código aqui
   return (base * height) / 2;
 }
 
 // Desafio 3
 function splitSentence(sentence) {
-  // seu código aqui
   let words = [];
   let letters = '';
   for (let index = 0; index < sentence.length; index += 1) {
@@ -35,22 +32,20 @@ function splitSentence(sentence) {
 
 // Desafio 4
 function concatName(insertArray) {
-  // seu código aqui
-  let concat;
-  concat = insertArray[insertArray.length - 1] + ', ' + insertArray[0];
+  let lasName = insertArray[insertArray.length - 1];
+  let firstName = insertArray[0];
+  let concat = lasName + ', ' + firstName;
   return concat;
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  // seu código aqui
   let points = 3 * wins + ties;
   return points;
 }
 
 // Desafio 6
 function highestCount(numbers) {
-  // seu código aqui
   let higherNumber = numbers[0];
   for (let index = 0; index < numbers.length; index += 1) {
     if (higherNumber < numbers[index + 1]) {
@@ -68,7 +63,6 @@ function highestCount(numbers) {
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  // seu código aqui
   let distanceCat1 = ((mouse - cat1) ** 2) ** (1 / 2);
   let distanceCat2 = ((mouse - cat2) ** 2) ** (1 / 2);
   let message = '';
@@ -84,7 +78,6 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz(numbers) {
-  // seu código aqui
   let newArray = [];
   for (let index = 0; index < numbers.length; index += 1) {
     let number = numbers[index];
@@ -97,17 +90,16 @@ function fizzBuzz(numbers) {
         newArray.push('fizz');
       }
     } else if (testBuzz) {
-        newArray.push('buzz');
-      } else {
-        newArray.push('bug!');
-      }
+      newArray.push('buzz');
+    } else {
+      newArray.push('bug!');
     }
+  }
   return newArray;
 }
 
 // Desafio 9
 function encode(phrase) {
-  // seu código aqui
   let newPhrase = [];
   for (let index = 0; index < phrase.length; index += 1) {
     let letter = phrase[index];
@@ -128,7 +120,6 @@ function encode(phrase) {
 }
 
 function decode(phrase) {
-  // seu código aqui
   let newPhrase = [];
   for (let index = 0; index < phrase.length; index += 1) {
     let letter = phrase[index];
