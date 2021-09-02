@@ -92,8 +92,21 @@ console.log(funcao);
 
 
 // Desafio 12
-function triangleCheck() {
+function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
+  let a = lineA;
+  let b = lineB;
+  let c = lineC;
+  let message = false;
+
+  let test1 = b + c > a;
+  let test2 = a + c > b;
+  let test3 = a + b > c;
+
+  if (test1 && test2 && test3) {
+    message = true;
+  }
+  return message;
 }
 
 // Desafio 13
