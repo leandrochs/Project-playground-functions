@@ -25,17 +25,13 @@ function generatePhoneNumber(numbers) {
   let part2 = ''; 
   let part3 = '';
   let message;
-
   // VERIFICAÇÕES
-
   // Verifica tamanho igual a 11.
-
   let tamanho = numbers.length === 11;
   if (!tamanho) {
     message = "Array com tamanho incorreto."
     return message; 
   }
-
   // Verifica números entre 0 e 9.
   let domain = true;
   for (let index = 0; index < numbers.length; index += 1) {
@@ -46,7 +42,6 @@ function generatePhoneNumber(numbers) {
       break;
    }
   }
-
   // Não se repete 3x ou mais.
   let tested = true;
   for (let index = 0; index < numbers.length; index += 1) {
@@ -66,7 +61,6 @@ function generatePhoneNumber(numbers) {
       }  
    }
   }
-
   // PASSOU EM VERIFICAÇÕES - MONTA NÚMERO
    if (tamanho && domain && tested) {
      for (let index = 0; index < 2; index += 1) {
@@ -82,14 +76,6 @@ function generatePhoneNumber(numbers) {
    } 
    return message;
 }
-
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
-let funcao = generatePhoneNumber(numbers);
-console.log(funcao);
-
-// https://github.com/tryber/sd-016-b-project-playground-functions 
-
-
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
@@ -110,8 +96,23 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
+function hydrate(frase) {
   // seu código aqui
+  let message;
+  let count = 0;
+  for (let i = 0; i < frase.length; i += 1) {
+    let n = parseFloat(frase[i]);
+    let isANumber = n > 0;
+    if (isANumber) {
+      count = count + n;
+    }
+  }
+  if (count === 1) {
+    message = '1 copo de água';
+  } else {
+    message = count + ' copos de água';
+  }
+  return message;
 }
 
 module.exports = {
