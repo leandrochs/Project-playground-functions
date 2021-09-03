@@ -96,7 +96,7 @@ function fbTest(n) {
     newArray = 'fizzBuzz';
   } else if (n % 3 !== 0 && n % 5 === 0) {
     newArray = 'buzz';
-  } 
+  }
   return newArray;
 }
 
@@ -105,14 +105,14 @@ function encode(phrase) {
   let newPhrase = [];
   let newLetter;
   for (let index = 0; index < phrase.length; index += 1) {
-    let letter = phrase[index]
+    let letter = phrase[index];
     newLetter = convertLetter(letter);
     newPhrase += newLetter;
   }
   return newPhrase;
 }
 function convertLetter(letter) {
-  let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5']
+  let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5'];
   for (let i = 0; i < key.length; i += 2) {
     if (letter === key[i]) {
       letter = key[i + 1];

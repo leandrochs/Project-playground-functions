@@ -29,7 +29,7 @@ function generatePhoneNumber(numbers) {
   // Verifica tamanho igual a 11.
   let tamanho = numbers.length === 11;
   if (!tamanho) {
-    message = "Array com tamanho incorreto.";
+    message = 'Array com tamanho incorreto.';
     return message;
   }
   // Verifica números entre 0 e 9.
@@ -59,7 +59,7 @@ function generatePhoneNumber(numbers) {
         message = 'não é possível gerar um número de telefone com esses valores';
         break;
       }
-  }
+    }
   }
   // PASSOU EM VERIFICAÇÕES - MONTA NÚMERO
   if (tamanho && domain && tested) {
@@ -72,8 +72,8 @@ function generatePhoneNumber(numbers) {
     for (let index = 7; index < 11; index += 1) {
       part3 += numbers[index];
     }
-    message = `'(' + ${part1} + ') ' + ${part2} + '-' + ${part3}`;
-   }
+    message = `(${part1}) ${part2}-${part3}`;
+  }
   return message;
 }
 
@@ -110,7 +110,7 @@ function hydrate(frase) {
   if (count === 1) {
     message = '1 copo de água';
   } else {
-    message = `${count} +  copos de água`;
+    message = `${count} copos de água`;
   }
   return message;
 }
