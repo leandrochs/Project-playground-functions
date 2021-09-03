@@ -1,5 +1,3 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable complexity */
 // Desafio 1
 function compareTrue(value1, value2) {
   let message = '';
@@ -46,14 +44,19 @@ function footballPoints(wins, ties) {
   return points;
 }
 
-// Desafio 6
-function highestCount(numbers) {
+function higher(numbers) {
   let higherNumber = numbers[0];
   for (let index = 0; index < numbers.length; index += 1) {
     if (higherNumber < numbers[index + 1]) {
       higherNumber = numbers[index + 1];
     }
   }
+  return higherNumber;
+}
+
+// Desafio 6
+function highestCount(numbers) {
+  let higherNumber = higher(numbers);
   let count = 0;
   for (let index = 0; index < numbers.length; index += 1) {
     if (higherNumber === numbers[index]) {
@@ -78,6 +81,20 @@ function catAndMouse(mouse, cat1, cat2) {
   return message;
 }
 
+function fbTest(n) {
+  let testNumber = 'bug!';
+  if (n % 3 === 0) {
+    testNumber = '';
+    testNumber = 'fizz';
+  } if (n % 5 === 0) {
+    testNumber += 'Buzz';
+  } if (n % 5 === 0 && n % 3 !== 0) {
+    testNumber = '';
+    testNumber = 'buzz';
+  }
+  return testNumber;
+}
+
 // Desafio 8
 function fizzBuzz(numbers) {
   let newArray = [];
@@ -88,16 +105,15 @@ function fizzBuzz(numbers) {
   return newArray;
 }
 
-function fbTest(n) {
-  let newArray = 'bug!';
-  if (n % 3 === 0 && n % 5 !== 0) {
-    newArray = 'fizz';
-  } else if (n % 15 === 0) {
-    newArray = 'fizzBuzz';
-  } else if (n % 3 !== 0 && n % 5 === 0) {
-    newArray = 'buzz';
+function convertLetter(letter) {
+  let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5'];
+  for (let i = 0; i < key.length; i += 2) {
+    if (letter === key[i]) {
+      letter = key[i + 1];
+      break;
+    }
   }
-  return newArray;
+  return letter;
 }
 
 // Desafio 9
@@ -111,11 +127,12 @@ function encode(phrase) {
   }
   return newPhrase;
 }
-function convertLetter(letter) {
+
+function convertLetter2(letter) {
   let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5'];
-  for (let i = 0; i < key.length; i += 2) {
+  for (let i = 1; i < key.length; i += 2) {
     if (letter === key[i]) {
-      letter = key[i + 1];
+      letter = key[i - 1];
       break;
     }
   }
@@ -131,16 +148,6 @@ function decode(phrase) {
     newPhrase += newLetter;
   }
   return newPhrase;
-}
-function convertLetter2(letter) {
-  let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5'];
-  for (let i = 1; i < key.length; i += 2) {
-    if (letter === key[i]) {
-      letter = key[i - 1];
-      break;
-    }
-  }
-  return letter;
 }
 
 module.exports = {

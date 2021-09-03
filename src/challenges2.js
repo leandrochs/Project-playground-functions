@@ -4,10 +4,10 @@ function techList(tech, inName) {
   let orderedTech = tech.sort();
   let finalList = [];
   if (orderedTech.length !== 0) {
-    for (let index in orderedTech) {
+    for (let i = 0; i < orderedTech.length; i += 1) {
       let list = {
         name: inName,
-        tech: orderedTech[index],
+        tech: orderedTech[i],
       };
       finalList.push(list);
       message = finalList;
@@ -18,68 +18,75 @@ function techList(tech, inName) {
   return message;
 }
 
-// Desafio 11
-function generatePhoneNumber(numbers) {
-  // seu código aqui
+function returnCount(numbers, number) {
+  let count = 0;
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (number === numbers[i]) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+function testRepetition(numbers) {
+  for (let index = 0; index < numbers.length; index += 1) {
+    let number = numbers[index];
+    let count = returnCount(numbers, number);
+    if (count > 2) {
+      let message = 'não é possível gerar um número de telefone com esses valores';
+      return message;
+    }
+  }
+  let message = true;
+  return message;
+}
+
+function testNumbers(numbers) {
+  let message = true;
+  if (numbers.length !== 11) {
+    message = 'Array com tamanho incorreto.';
+    return message;
+  }
+  for (let index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] < 0 || numbers[index] > 9) {
+      message = 'não é possível gerar um número de telefone com esses valores';
+      return message;
+    }
+    message = testRepetition(numbers);
+  }
+  return message;
+}
+
+function assemblePhone(numbers) {
   let part1 = '';
   let part2 = '';
   let part3 = '';
   let message;
-  // VERIFICAÇÕES
-  // Verifica tamanho igual a 11.
-  let tamanho = numbers.length === 11;
-  if (!tamanho) {
-    message = 'Array com tamanho incorreto.';
-    return message;
+  for (let index = 0; index < 2; index += 1) {
+    part1 += numbers[index];
   }
-  // Verifica números entre 0 e 9.
-  let domain = true;
-  for (let index = 0; index < numbers.length; index += 1) {
-    domain = numbers[index] >= 0 && numbers[index] <= 9;
-    if (!domain) {
-      domain = false;
-      message = 'não é possível gerar um número de telefone com esses valores';
-      break;
-    }
+  for (let index = 2; index < 7; index += 1) {
+    part2 += numbers[index];
   }
-  // Não se repete 3x ou mais.
-  let tested = true;
-  for (let index = 0; index < numbers.length; index += 1) {
-    let numberTested = numbers[index];
-    if (!tested) {
-      break;
-    }
-    let count = 0;
-    for (let i = 0; i < numbers.length; i += 1) {
-      if (numberTested === numbers[i]) {
-        count += 1;
-      }
-      if (count > 2) {
-        tested = false;
-        message = 'não é possível gerar um número de telefone com esses valores';
-        break;
-      }
-    }
+  for (let index = 7; index < 11; index += 1) {
+    part3 += numbers[index];
   }
-  // PASSOU EM VERIFICAÇÕES - MONTA NÚMERO
-  if (tamanho && domain && tested) {
-    for (let index = 0; index < 2; index += 1) {
-      part1 += numbers[index];
-    }
-    for (let index = 2; index < 7; index += 1) {
-      part2 += numbers[index];
-    }
-    for (let index = 7; index < 11; index += 1) {
-      part3 += numbers[index];
-    }
-    message = `(${part1}) ${part2}-${part3}`;
+  message = `(${part1}) ${part2}-${part3}`;
+  return message;
+}
+
+// Desafio 11
+function generatePhoneNumber(numbers) {
+  let message = testNumbers(numbers);
+  if (message === true) {
+    message = assemblePhone(numbers);
   }
   return message;
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  // seu código aqui
+// seu código aqui
   let a = lineA;
   let b = lineB;
   let c = lineC;
