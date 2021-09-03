@@ -36,7 +36,7 @@ function splitSentence(sentence) {
 function concatName(insertArray) {
   let lasName = insertArray[insertArray.length - 1];
   let firstName = insertArray[0];
-  let concat = `${lasName} + ', ' + ${firstName}`;
+  let concat = `${lasName}, ${firstName}`;
   return concat;
 }
 
