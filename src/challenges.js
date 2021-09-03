@@ -82,21 +82,21 @@ function catAndMouse(mouse, cat1, cat2) {
 function fizzBuzz(numbers) {
   let newArray = [];
   for (let index = 0; index < numbers.length; index += 1) {
-    let number = numbers[index];
-    let testFizz = number % 3 === 0;
-    let testBuzz = number % 5 === 0;
-    if (testFizz) {
-      if (testBuzz) {
-        newArray.push('fizzBuzz');
-      } else {
-        newArray.push('fizz');
-      }
-    } else if (testBuzz) {
-      newArray.push('buzz');
-    } else {
-      newArray.push('bug!');
-    }
+    let n = numbers[index];
+    newArray.push(fbTest(n));
   }
+  return newArray;
+}
+
+function fbTest(n) {
+  let newArray = 'bug!';
+  if (n % 3 === 0 && n % 5 !== 0) {
+    newArray = 'fizz';
+  } else if (n % 15 === 0) {
+    newArray = 'fizzBuzz';
+  } else if (n % 3 !== 0 && n % 5 === 0) {
+    newArray = 'buzz';
+  } 
   return newArray;
 }
 
