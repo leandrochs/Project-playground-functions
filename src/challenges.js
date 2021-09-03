@@ -1,3 +1,5 @@
+/* eslint-disable max-lines-per-function */
+/* eslint-disable complexity */
 // Desafio 1
 function compareTrue(value1, value2) {
   let message = '';
@@ -34,7 +36,7 @@ function splitSentence(sentence) {
 function concatName(insertArray) {
   let lasName = insertArray[insertArray.length - 1];
   let firstName = insertArray[0];
-  let concat = lasName + ', ' + firstName;
+  let concat = `${lasName} + ', ' + ${firstName}`;
   return concat;
 }
 
@@ -101,42 +103,44 @@ function fizzBuzz(numbers) {
 // Desafio 9
 function encode(phrase) {
   let newPhrase = [];
+  let newLetter;
   for (let index = 0; index < phrase.length; index += 1) {
-    let letter = phrase[index];
-    if (letter === 'a') {
-      letter = 1;
-    } else if (letter === 'e') {
-      letter = 2;
-    } else if (letter === 'i') {
-      letter = 3;
-    } else if (letter === 'o') {
-      letter = 4;
-    } else if (letter === 'u') {
-      letter = 5;
-    }
-    newPhrase += letter;
+    let letter = phrase[index]
+    newLetter = convertLetter(letter);
+    newPhrase += newLetter;
   }
   return newPhrase;
+}
+function convertLetter(letter) {
+  let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5']
+  for (let i = 0; i < key.length; i += 2) {
+    if (letter === key[i]) {
+      letter = key[i + 1];
+      break;
+    }
+  }
+  return letter;
 }
 
 function decode(phrase) {
   let newPhrase = [];
+  let newLetter;
   for (let index = 0; index < phrase.length; index += 1) {
     let letter = phrase[index];
-    if (letter === '1') {
-      letter = 'a';
-    } else if (letter === '2') {
-      letter = 'e';
-    } else if (letter === '3') {
-      letter = 'i';
-    } else if (letter === '4') {
-      letter = 'o';
-    } else if (letter === '5') {
-      letter = 'u';
-    }
-    newPhrase += letter;
+    newLetter = convertLetter2(letter);
+    newPhrase += newLetter;
   }
   return newPhrase;
+}
+function convertLetter2(letter) {
+  let key = ['a', '1', 'e', '2', 'i', '3', 'o', '4', 'u', '5'];
+  for (let i = 1; i < key.length; i += 2) {
+    if (letter === key[i]) {
+      letter = key[i - 1];
+      break;
+    }
+  }
+  return letter;
 }
 
 module.exports = {

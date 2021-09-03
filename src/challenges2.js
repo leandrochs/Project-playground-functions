@@ -22,15 +22,15 @@ function techList(tech, inName) {
 function generatePhoneNumber(numbers) {
   // seu código aqui
   let part1 = '';
-  let part2 = ''; 
+  let part2 = '';
   let part3 = '';
   let message;
   // VERIFICAÇÕES
   // Verifica tamanho igual a 11.
   let tamanho = numbers.length === 11;
   if (!tamanho) {
-    message = "Array com tamanho incorreto."
-    return message; 
+    message = "Array com tamanho incorreto.";
+    return message;
   }
   // Verifica números entre 0 e 9.
   let domain = true;
@@ -38,43 +38,43 @@ function generatePhoneNumber(numbers) {
     domain = numbers[index] >= 0 && numbers[index] <= 9;
     if (!domain) {
       domain = false;
-      message = "não é possível gerar um número de telefone com esses valores";
+      message = 'não é possível gerar um número de telefone com esses valores';
       break;
-   }
+    }
   }
   // Não se repete 3x ou mais.
   let tested = true;
   for (let index = 0; index < numbers.length; index += 1) {
     let numberTested = numbers[index];
     if (!tested) {
-     break;
-   }
+      break;
+    }
     let count = 0;
-    for (let index = 0; index < numbers.length; index += 1) {
-     if (numberTested === numbers[index]) {
-       count += 1;
-     }
+    for (let i = 0; i < numbers.length; i += 1) {
+      if (numberTested === numbers[i]) {
+        count += 1;
+      }
       if (count > 2) {
-       tested = false;
-       message = "não é possível gerar um número de telefone com esses valores"
-       break;
-      }  
-   }
+        tested = false;
+        message = 'não é possível gerar um número de telefone com esses valores';
+        break;
+      }
+  }
   }
   // PASSOU EM VERIFICAÇÕES - MONTA NÚMERO
-   if (tamanho && domain && tested) {
-     for (let index = 0; index < 2; index += 1) {
-       part1 = part1 + numbers[index];  
-     }
-     for (let index = 2; index < 7; index += 1) {
-       part2 = part2 + numbers[index];  
-     }
-     for (let index = 7; index < 11; index += 1) {
-       part3 = part3 + numbers[index];  
-     }
-     message = '(' + part1 + ') ' + part2 + '-' + part3; 
-   } 
-   return message;
+  if (tamanho && domain && tested) {
+    for (let index = 0; index < 2; index += 1) {
+      part1 += numbers[index];
+    }
+    for (let index = 2; index < 7; index += 1) {
+      part2 += numbers[index];
+    }
+    for (let index = 7; index < 11; index += 1) {
+      part3 += numbers[index];
+    }
+    message = `'(' + ${part1} + ') ' + ${part2} + '-' + ${part3}`;
+   }
+  return message;
 }
 
 // Desafio 12
@@ -104,13 +104,13 @@ function hydrate(frase) {
     let n = parseFloat(frase[i]);
     let isANumber = n > 0;
     if (isANumber) {
-      count = count + n;
+      count += n;
     }
   }
   if (count === 1) {
     message = '1 copo de água';
   } else {
-    message = count + ' copos de água';
+    message = `${count} +  copos de água`;
   }
   return message;
 }
